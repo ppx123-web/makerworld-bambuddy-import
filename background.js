@@ -44,8 +44,7 @@ async function transfer(url, job) {
     await report('running', `正在上传 ${name}…`);
     const uploaded = await fetch(job.origin + '/api/v1/library/files?generate_stl_thumbnails=true', {method:'POST', headers:{Authorization:`Bearer ${token}`}, body:form, redirect:'error'});
     if (!uploaded.ok) {
-      let detail = ''; try { const j = await uploaded.json(); if (typeof j.detail === 'string') detail = '：'+j.detail; } catch {}
-      throw new Error(`Bambuddy 上传失败（HTTP ${uploaded.status}）${detail}`);
+      throw new Error(`Bambuddy 上传失败（HTTP ${uploaded.status}）。请检查登录状态和上传权限。`);
     }
     await report('success', `导入完成：${name}\n可在 Bambuddy 文件管理器中查看。`);
   } catch (e) { await report('error', e.message || '导入失败。'); }

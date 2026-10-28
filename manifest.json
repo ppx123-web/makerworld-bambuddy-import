@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "MakerWorld to Bambuddy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "将 MakerWorld 国际站和中国站的打印配置导入 Bambuddy。",
   "permissions": [
     "storage",

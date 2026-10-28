@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "MakerWorld to Bambuddy",
+  "version": "0.2.0",
+  "description": "将 MakerWorld 国际站和中国站的打印配置导入 Bambuddy。",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "tabs",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://makerworld.com.cn/*",
+    "https://*.bblmw.cn/*",
+    "https://*.bambulab.cn/*",
+    "https://makerworld.com/*",
+    "https://*.bblmw.com/*"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "导入到 Bambuddy",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
+}
